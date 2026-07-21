@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Notes</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @page { size: 280mm 210mm; margin: 6mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 268mm; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1a1a1a; background: #fff;
+    font-size: 9.3pt; line-height: 1.24;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* ---------- 3-ZONE GRID ---------- */
+  .zones { display: grid; grid-template-columns: 21% 47% 32%; gap: 8px; }
+  .zone { border: 1px solid #d5d5d5; border-radius: 5px; overflow: hidden; }
+  .zone-h {
+    padding: 5px 9px; font-size: 10pt; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: #fff; display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .zone-h small { font-weight: 400; font-size: 7.8pt; letter-spacing: .02em; text-transform: none; opacity: .9; }
+  .z-intro .zone-h { background: #0b57a4; }
+  .z-spine .zone-h { background: #1b7340; }
+  .z-probe .zone-h { background: #5f5f5f; }
+  .zone-body { padding: 6px 7px; }
+
+  /* ---------- HOOK ROWS ---------- */
+  .hook { display: flex; gap: 7px; padding: 4.5px 2px; border-top: 1px solid #ececec; }
+  .hook:first-child { border-top: none; }
+  .chip {
+    flex: 0 0 18px; height: 18px; border-radius: 50%;
+    color: #fff; font-size: 9pt; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .z-intro .chip { background: #0b57a4; }
+  .z-spine .chip { background: #1b7340; }
+  .hk { flex: 1; }
+  .hk .w { font-size: 12.5pt; font-weight: 800; letter-spacing: .01em; }
+  .stop { color: #b3261e; font-weight: 700; }
+  .bt { display: inline-block; font-size: 7.8pt; font-weight: 700; letter-spacing: .08em;
+    color: #1b7340; background: #e7f2ea; border: 1px solid #bcd9c6; border-radius: 3px;
+    padding: 0 4px; vertical-align: 2.5px; margin-right: 4px; }
+  .callback { display: inline-block; background: #fff3cd; border: 1px solid #e0c368; border-radius: 3px;
+    padding: 0 4px; font-size: 8.2pt; font-weight: 700; color: #7a5c00; white-space: nowrap; }
+
+  /* ---------- TRIGGER BULLETS ---------- */
+  ul.tg { list-style: none; margin: 2px 0 0 0; }
+  ul.tg li { font-size: 8.9pt; color: #2c2c2c; padding: 1px 0 1px 11px; position: relative; }
+  ul.tg li::before { content: "–"; position: absolute; left: 0; color: #9a9a9a; }
+  ul.tg li b { color: #111; }
+
+  /* ---------- MICRO-LADDERS (BET / RESULT) ---------- */
+  .ladder { margin: 3px 0 1px 0; border-left: 3px solid #1b7340; background: #f2f8f4; border-radius: 0 4px 4px 0; }
+  .rung { display: flex; gap: 6px; padding: 3.5px 6px; border-top: 1px dashed #cfe3d6; }
+  .rung:first-child { border-top: none; }
+  .rung .rw { flex: 0 0 92px; font-size: 9.3pt; font-weight: 800; color: #14532d; }
+  .rung .rt { flex: 1; font-size: 8.9pt; color: #2c2c2c; }
+  .rung .rt b { color: #111; }
+
+  /* ---------- PROBES ---------- */
+  .probe { padding: 0 0 5px 0; margin-top: 5px; }
+  .probe:first-child { margin-top: 0; }
+  .probe .q {
+    font-size: 9.4pt; font-weight: 800; color: #222;
+    background: #e9e9e9; border-left: 4px solid #5f5f5f; border-radius: 0 3px 3px 0;
+    padding: 2.5px 7px; margin-bottom: 2px;
+  }
+  .probe ul.tg li { font-size: 8.8pt; }
+  .probe.learn .q { background: #f7ecd4; border-left-color: #c9a227; color: #6b5100; }
+
+  /* ---------- RULES (bottom of probes) ---------- */
+  .rules {
+    margin-top: 6px; border: 1px solid #d5d5d5; border-radius: 4px;
+    background: #f5f5f5; padding: 4px 7px; font-size: 8.3pt; color: #333; line-height: 1.4;
+  }
+  .rules .rh { display: inline; font-size: 8.4pt; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #555; margin-right: 4px; }
+  .rules span { display: inline; }
+  .rules span + span::before { content: "  ·  "; color: #999; }
+  .rules b { color: #111; }
+
+  @media print { body { zoom: 1 !important; } }
+  @media screen { body { padding: 8px; } }
+</style>
+</head>
+<body>
+
+  <div class="zones">
+
+    <!-- ZONE 1 : INTRO -->
+    <div class="zone z-intro">
+      <div class="zone-h">Intro <small>~2 min → hand back</small></div>
+      <div class="zone-body">
+        <div class="hook"><div class="chip">1</div><div class="hk">
+          <div class="w">BUILDER</div>
+          <ul class="tg">
+            <li>at heart · <b>Lego → computers → software</b></li>
+            <li><b>0-to-1</b> is my strength</li>
+            <li>problem, not industry · greenfield, <b>no playbook</b></li>
+            <li>thesis on a page → <b>funded platform</b></li>
+            <li><b>IC on purpose</b></li>
+            <li>light: investing tools <span class="stop">(no pitch)</span></li>
+          </ul>
+        </div></div>
+        <div class="hook"><div class="chip">2</div><div class="hk">
+          <div class="w">MINING</div>
+          <ul class="tg">
+            <li>Central QLD · young, big team</li>
+            <li><b>way over my head</b></li>
+            <li>→ <b>taught myself to code</b></li>
+            <li>gov data → payments → AI → Intuit</li>
+          </ul>
+        </div></div>
+        <div class="hook"><div class="chip">3</div><div class="hk">
+          <div class="w">US</div>
+          <ul class="tg">
+            <li>APAC winding down · asked to move</li>
+            <li>not right: <b>me, partner, family</b></li>
+            <li><b>intentional</b> <span class="stop">(never "role got cut")</span></li>
+          </ul>
+        </div></div>
+        <div class="hook"><div class="chip">4</div><div class="hk">
+          <div class="w">E-INVOICING</div>
+          <ul class="tg">
+            <li>"<b>e-invoicing work I led</b>"</li>
+            <li>"walk you through it later"</li>
+            <li><span class="stop">STOP — make him ask</span></li>
+          </ul>
+        </div></div>
+        <div class="hook"><div class="chip">5</div><div class="hk">
+          <div class="w">TRENCHES</div>
+          <ul class="tg">
+            <li><b>global from the ground up</b>, not US + outposts</li>
+            <li>"<b>in the trenches</b> building, not at the edge of someone else's org"</li>
+            <li><span class="stop">→ STOP</span></li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ZONE 2 : SPINE -->
+    <div class="zone z-spine">
+      <div class="zone-h">eInvoicing Spine <small>~3-min version, then STOP · story ends at 6</small></div>
+      <div class="zone-body">
+        <div class="hook"><div class="chip">1</div><div class="hk">
+          <div class="w"><span class="bt">OPENER</span>PDF → NETWORK</div>
+          <ul class="tg">
+            <li>structured format, not PDF-by-email · <b>B2B network + copy to gov</b></li>
+            <li>"most treat the mandate as a <b>cost</b> — I made it a <b>growth strategy for APAC</b>"</li>
+            <li>"I'll give you the 3-min version"</li>
+          </ul>
+        </div></div>
+
+        <div class="hook"><div class="chip">2</div><div class="hk">
+          <div class="w"><span class="bt">BET</span>74 → STOP → PAID &nbsp;<span class="callback">plants: NORTH STAR</span></div>
+          <div class="ladder">
+            <div class="rung"><div class="rw">74</div><div class="rt"><b>cost of entry</b> · growing yearly</div></div>
+            <div class="rung"><div class="rw">OPS STOP</div><div class="rt">can't invoice → <b>can't get paid</b> · <b>existential</b></div></div>
+            <div class="rung"><div class="rw">107</div><div class="rt"><b>100+ interviews</b> · #1 pain = <b>getting paid</b></div></div>
+            <div class="rung"><div class="rw">FRONT DOOR</div><div class="rt"><b>JTBD</b>, not checkbox · <b>Head of Product APAC</b> · mandate wave → land on Intuit · <b>NORTH STAR: ACQUISITION</b></div></div>
+          </div>
+        </div></div>
+
+        <div class="hook"><div class="chip">3</div><div class="hk">
+          <div class="w"><span class="bt">BUILD</span>END-TO-END → 40 YEARS</div>
+          <ul class="tg">
+            <li>ran everything: strategy · funding · <b>gov accreditation</b> · <b>absorbed design</b> · usual PM</li>
+            <li><b>40-yr-old stack</b> — even <i>receiving</i> an invoice, QB never did it</li>
+            <li><b>minimal Malaysia pilot</b> → worked, proved capability</li>
+          </ul>
+        </div></div>
+
+        <div class="hook"><div class="chip">4</div><div class="hk">
+          <div class="w"><span class="bt">SURPRISE 1</span>TOO EXPENSIVE</div>
+          <ul class="tg">
+            <li>custom build · per-country <b>ROI makes no sense</b></li>
+            <li>→ <b>CONFIG-OVER-CODE</b>: new market = config file, not rebuild</li>
+          </ul>
+        </div></div>
+
+        <div class="hook"><div class="chip">5</div><div class="hk">
+          <div class="w"><span class="bt">SURPRISE 2</span>NORTH STAR WAS WRONG &nbsp;<span class="callback">⤴ callback to BET</span></div>
+          <ul class="tg">
+            <li>acquisition minimal · <b>retention strong</b></li>
+            <li>getting paid = <b>stickiness</b> · they don't leave · real pain, not lock-in</li>
+          </ul>
+        </div></div>
+
+        <div class="hook"><div class="chip">6</div><div class="hk">
+          <div class="w"><span class="bt">RESULT</span>BUSINESS CASE</div>
+          <div class="ladder">
+            <div class="rung"><div class="rw">REFRAME</div><div class="rt">retention = <b>the business case</b> → funded the <b>composable compliance platform</b> · every market, at scale · <b>launching SG this month</b></div></div>
+            <div class="rung"><div class="rw">HONEST</div><div class="rt">one market <b>doesn't move the needle</b> · won't oversell</div></div>
+            <div class="rung"><div class="rw">WIN</div><div class="rt"><b>funded, headcount and all</b> · FY27 across markets · <b>"Malaysia was the business case; the platform is the engine"</b> <span class="stop">→ STOP</span></div></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ZONE 3 : PROBES -->
+    <div class="zone z-probe">
+      <div class="zone-h">If he probes <small>answer-first, then reasoning</small></div>
+      <div class="zone-body">
+        <div class="probe learn">
+          <div class="q">"What would you do differently?" (LEARN)</div>
+          <ul class="tg">
+            <li><b>regulator earlier</b> — that one's on me</li>
+            <li>partner (right then) → now <b>build ourselves + headless</b></li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Old architecture — what specifically?</div>
+          <ul class="tg">
+            <li>no <b>inbound</b> ever existed</li>
+            <li>V1: <b>EIS</b> — ingest → draft/review → publish</li>
+            <li>V0 on Classic Invoices (ReThink not ready)</li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Config-over-code — how does it scale?</div>
+          <ul class="tg">
+            <li>country = <b>config entry + thin adapter</b></li>
+            <li><b>4-6 wks → 3-5 days</b> (eng's number)</li>
+            <li><b>strategy mine · architecture eng's</b> (Ankit, Callum)</li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">How do you know retention is real? (lean in)</div>
+          <ul class="tg">
+            <li><b>98% vs 75%</b> — but flag it: <b>selection bias</b></li>
+            <li>trust: <b>~70% better net-attrition</b> vs peers</li>
+            <li><b>4 methodologies rejected</b> → pivoted to usage</li>
+            <li>denominators <b>783/800 vs 5,500/7,323</b></li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Your contribution vs the team?</div>
+          <ul class="tg">
+            <li><b>strategy + investment</b> (to SVP GM)</li>
+            <li><b>gov accreditation</b> (IMDA) · + design</li>
+            <li><b>architecture = engineering</b>, credit them</li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Why partner, not build?</div>
+          <ul class="tg">
+            <li>right call <b>then</b>: risk, liability, speed</li>
+            <li><b>sequenced</b>: prove config → build → headless</li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Why was Singapore delayed?</div>
+          <ul class="tg">
+            <li><b>IMDA added reqs mid-build</b> · <b>Fonoa not ready</b></li>
+            <li>re-scoped, launching anyway · <b>no results yet</b></li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Who was the customer / what did they need?</div>
+          <ul class="tg">
+            <li>can't invoice = <b>can't operate</b></li>
+            <li>deeper: <b>getting paid</b> — trust, faster</li>
+            <li>SG customer said this <b>(paraphrase, flag it)</b></li>
+          </ul>
+        </div>
+        <div class="rules"><span class="rh">Rules:</span><span><b>spine then STOP</b></span><span><b>answer-first</b></span><span><b>I</b> = strategy/gov, <b>we</b> = build</span><span>numbers: <b>"let me get this right"</b> + glance</span><span>blank: <b>"take a second"</b></span><span>bench topic → <b>bridge back</b></span></div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  (function () {
+    if (!window.matchMedia || !window.matchMedia('print').matches) {
+      var fit = function () { document.body.style.zoom = (window.innerWidth - 20) / 1013; };
+      window.addEventListener('resize', fit);
+      fit();
+    }
+  })();
+</script>
+</body>
+</html>
