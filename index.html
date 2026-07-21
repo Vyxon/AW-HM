@@ -301,17 +301,26 @@
       <div class="ps-h">Problem-Solving · the spine</div>
       <div class="ps-body">
         <div class="ps-spine">
-          <div class="ps-step"><div class="n">1 CLARIFY</div><div class="d">restate goal · <b>NAME THE NORTH STAR</b> · 2-3 scoping Qs · state assumptions</div></div>
-          <div class="ps-step"><div class="n">2 STRUCTURE</div><div class="d">"I'll look at A,B,C" — MECE, before diving in</div></div>
-          <div class="ps-step"><div class="n">3 ANALYZE</div><div class="d">deep on the crux · one-line the rest</div></div>
-          <div class="ps-step"><div class="n">4 RECOMMEND</div><div class="d">commit to ONE + the tradeoff you accept</div></div>
-          <div class="ps-step"><div class="n">5 RISKS</div><div class="d">what breaks it · the one thing you'd validate</div></div>
+          <div class="ps-step"><div class="n">1 CLARIFY</div><div class="d">situation + assumptions + <b>NORTH STAR</b> (what are we optimizing?)</div></div>
+          <div class="ps-step"><div class="n">2 CUSTOMER + JOB</div><div class="d"><b>who exactly</b> + their real pain — specific segment, not "customers who need X"</div></div>
+          <div class="ps-step"><div class="n">3 STRUCTURE</div><div class="d">the considerations (A / B / C) + <b>name the crux</b></div></div>
+          <div class="ps-step"><div class="n">4 ANALYZE</div><div class="d">deep on crux · narrow · <b>weave, don't march</b></div></div>
+          <div class="ps-step"><div class="n">5 TRADE-OFFS</div><div class="d"><i>the answer on open-ended/"what to build" Qs</i> · fold into Recommend on binary ones</div></div>
+          <div class="ps-step"><div class="n">6 RECOMMEND + RISKS</div><div class="d">commit to ONE + kill-condition / tiebreaker</div></div>
         </div>
-        <div class="ps-tell"><b>NORTH STAR FIRST:</b> can't recommend without a metric to optimize. Ask or assume: <b>"what are we optimizing Yield for — AUM, revenue, or retention?"</b> Default = <b>avg balance under management</b> (revenue + stickiness both flow from it). Score every branch against it.</div>
-        <div class="ps-tell"><b>NARROW TWICE:</b> name the crux bucket in STRUCTURE ("where this gets decided is X&amp;Y") → then spend time unevenly in ANALYZE. Don't boil the ocean.</div>
-        <div class="ps-tell"><b>COMMIT then caveat.</b> Waffling = the fail. "I don't know — here's how I'd find out" is aligned, not weak.</div>
-        <div class="ps-tell"><b>Fintech layer:</b> anchor in <b>bps take-rate / unit economics</b> + <b>per-market regulatory constraint</b>. Offense vs defense. Config not rebuild.</div>
-        <div class="ps-tell"><b>Customer + metric braid (the winning move):</b> reframe the metric as a <b>human question</b> ("how does an SMB relate to its cash") → lead the crux with a <b>customer/JTBD hypothesis</b> → bring <b>data to TEST it, not replace it</b> → justify the call by the <b>customer's job</b> → "I'd talk to them" = the tiebreaker.</div>
+        <div class="ps-tell"><b>Crux = fatal × uncertain:</b> the consideration whose failure <b>kills it regardless of the rest</b> (regulatory often; economics is usually fixable) AND that you're <b>least sure of</b>. Say why: "crux is X because if it fails nothing else matters, and it's what I don't yet know."</div>
+        <div class="ps-tell"><b>NORTH STAR:</b> ask or assume ("optimizing for AUM, revenue, or retention?"). Decompose it (revenue = volume × take-rate) and <b>score every branch against it</b>. Can't recommend without it.</div>
+        <div class="ps-tell"><b>Customer + metric braid (the winning move):</b> reframe the metric as a <b>human question</b> → lead the crux with a <b>customer/JTBD hypothesis</b> → bring <b>data to TEST it, not replace it</b> → "I'd talk to them" = the tiebreaker.</div>
+        <div class="ps-tell"><b>Weave, don't march:</b> connect the lenses through the north star (e.g. regulation→rails→take-rate→revenue), don't checklist them. <b>Commit then caveat</b> — waffling = the fail; "I don't know, here's how I'd find out" is aligned.</div>
+        <div class="ps-tell"><b>Fintech layer:</b> <b>bps take-rate / unit economics</b> + <b>per-market regulatory constraint</b>. Offense vs defense. Config not rebuild.</div>
+      </div>
+      <div class="ps-h" style="background:#8a4a12;">Airwallex defaults <span style="font-weight:400;font-size:8pt;text-transform:none;letter-spacing:0;">— strong priors, pressure-test don't recite</span></div>
+      <div class="ps-body" style="border-top:none;">
+        <div class="ps-tell"><b>North star →</b> default <b>RETAINED BALANCE on-platform</b> (money that stays = monetizable via FX / yield / spend, and the leading indicator of stickiness). Revenue is downstream of it. <i>Unless the prompt is clearly acquisition- or compliance-led.</i></div>
+        <div class="ps-tell"><b>Customer segment →</b> pick the segment that <b>actually keeps balances</b>: SMB / mid-market holding operating balances (sticky) &gt; enterprise (custom treasury, pulls out). Beachhead = whoever has real idle/held balance, not "everyone who transacts."</div>
+        <div class="ps-tell"><b>Considerations →</b> usually the same three: <b>(1) is it a real job</b> · <b>(2) regulatory / compliance</b> · <b>(3) economics</b> (cost-to-serve at balance size).</div>
+        <div class="ps-tell"><b>Crux →</b> usually <b>(1) real job × (2) regulatory</b>. Economics is usually fixable; build cost is a "how" not a "whether."</div>
+        <div class="ps-tell"><b>Analyze the job as →</b> "will the defined customer <b>maintain a balance in Airwallex</b> because of this?" If yes → moves the north star. If they'd pull out anyway → it doesn't, however good the product.</div>
       </div>
     </div>
 
