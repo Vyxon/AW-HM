@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Notes</title>
 <meta name="robots" content="noindex, nofollow">
+<title>Airwallex HM — One-Page Cheat Sheet</title>
 <style>
   @page { size: 280mm 210mm; margin: 6mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,6 +44,7 @@
   .bt { display: inline-block; font-size: 7.8pt; font-weight: 700; letter-spacing: .08em;
     color: #1b7340; background: #e7f2ea; border: 1px solid #bcd9c6; border-radius: 3px;
     padding: 0 4px; vertical-align: 2.5px; margin-right: 4px; }
+  .bt.blue { color: #0b57a4; background: #e5eef8; border-color: #b4cde8; }
   .callback { display: inline-block; background: #fff3cd; border: 1px solid #e0c368; border-radius: 3px;
     padding: 0 4px; font-size: 8.2pt; font-weight: 700; color: #7a5c00; white-space: nowrap; }
 
@@ -60,6 +61,18 @@
   .rung .rw { flex: 0 0 92px; font-size: 9.3pt; font-weight: 800; color: #14532d; }
   .rung .rt { flex: 1; font-size: 8.9pt; color: #2c2c2c; }
   .rung .rt b { color: #111; }
+
+  /* ---------- THE TURN (SURPRISE 2 → RESULT as one causal chain) ---------- */
+  .turn { border: 2px solid #1b7340; border-radius: 6px; background: #eef7f1; padding: 5px 7px 6px; margin-top: 4px; }
+  .turn-h { font-size: 8.4pt; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+    color: #14532d; text-align: center; margin-bottom: 3px; }
+  .link { display: flex; gap: 7px; align-items: flex-start; padding: 2px 0; }
+  .link .n { flex: 0 0 15px; height: 15px; border-radius: 50%; background: #1b7340; color: #fff;
+    font-size: 8.4pt; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .link .lt { flex: 1; font-size: 9.1pt; color: #1a1a1a; }
+  .link .lt b { color: #111; }
+  .link .lt .big { font-size: 10pt; font-weight: 800; color: #14532d; }
+  .arw { padding: 0 0 0 6px; margin: 0; font-size: 8pt; font-style: italic; color: #6b8f78; line-height: 1.05; }
 
   /* ---------- PROBES ---------- */
   .probe { padding: 0 0 5px 0; margin-top: 5px; }
@@ -95,7 +108,7 @@
       <div class="zone-h">Intro <small>~2 min → hand back</small></div>
       <div class="zone-body">
         <div class="hook"><div class="chip">1</div><div class="hk">
-          <div class="w">BUILDER</div>
+          <div class="w"><span class="bt blue">WHO</span>BUILDER</div>
           <ul class="tg">
             <li>at heart · <b>Lego → computers → software</b></li>
             <li><b>0-to-1</b> is my strength</li>
@@ -106,7 +119,7 @@
           </ul>
         </div></div>
         <div class="hook"><div class="chip">2</div><div class="hk">
-          <div class="w">MINING</div>
+          <div class="w"><span class="bt blue">HOW</span>MINING</div>
           <ul class="tg">
             <li>Central QLD · young, big team</li>
             <li><b>way over my head</b></li>
@@ -115,7 +128,7 @@
           </ul>
         </div></div>
         <div class="hook"><div class="chip">3</div><div class="hk">
-          <div class="w">US</div>
+          <div class="w"><span class="bt blue">WHY NOW</span>US</div>
           <ul class="tg">
             <li>APAC winding down · asked to move</li>
             <li>not right: <b>me, partner, family</b></li>
@@ -123,7 +136,7 @@
           </ul>
         </div></div>
         <div class="hook"><div class="chip">4</div><div class="hk">
-          <div class="w">E-INVOICING</div>
+          <div class="w"><span class="bt blue">ANCHOR</span>E-INVOICING</div>
           <ul class="tg">
             <li>"<b>e-invoicing work I led</b>"</li>
             <li>"walk you through it later"</li>
@@ -131,7 +144,7 @@
           </ul>
         </div></div>
         <div class="hook"><div class="chip">5</div><div class="hk">
-          <div class="w">TRENCHES</div>
+          <div class="w"><span class="bt blue">AIRWALLEX</span>TRENCHES</div>
           <ul class="tg">
             <li><b>global from the ground up</b>, not US + outposts</li>
             <li>"<b>in the trenches</b> building, not at the edge of someone else's org"</li>
@@ -143,7 +156,7 @@
 
     <!-- ZONE 2 : SPINE -->
     <div class="zone z-spine">
-      <div class="zone-h">eInvoicing Spine <small>~3-min version, then STOP · story ends at 6</small></div>
+      <div class="zone-h">eInvoicing Spine <small>~3-min version, then STOP · story ends at ⑤</small></div>
       <div class="zone-body">
         <div class="hook"><div class="chip">1</div><div class="hk">
           <div class="w"><span class="bt">OPENER</span>PDF → NETWORK</div>
@@ -182,19 +195,35 @@
         </div></div>
 
         <div class="hook"><div class="chip">5</div><div class="hk">
-          <div class="w"><span class="bt">SURPRISE 2</span>NORTH STAR WAS WRONG &nbsp;<span class="callback">⤴ callback to BET</span></div>
-          <ul class="tg">
-            <li>acquisition minimal · <b>retention strong</b></li>
-            <li>getting paid = <b>stickiness</b> · they don't leave · real pain, not lock-in</li>
-          </ul>
-        </div></div>
+          <div class="w"><span class="bt">SURPRISE 2 → RESULT</span>THE TURN <span class="callback">⤴ callback to BET</span></div>
+          <div class="turn">
+            <div class="turn-h">one motion — ride the arrows, don't stop till ⑤</div>
 
-        <div class="hook"><div class="chip">6</div><div class="hk">
-          <div class="w"><span class="bt">RESULT</span>BUSINESS CASE</div>
-          <div class="ladder">
-            <div class="rung"><div class="rw">REFRAME</div><div class="rt">retention = <b>the business case</b> → funded the <b>composable compliance platform</b> · every market, at scale · <b>launching SG this month</b></div></div>
-            <div class="rung"><div class="rw">HONEST</div><div class="rt">one market <b>doesn't move the needle</b> · won't oversell</div></div>
-            <div class="rung"><div class="rw">WIN</div><div class="rt"><b>funded, headcount and all</b> · FY27 across markets · <b>"Malaysia was the business case; the platform is the engine"</b> <span class="stop">→ STOP</span></div></div>
+            <div class="link"><div class="n">1</div><div class="lt">
+              acquisition bet was <span class="big">WRONG</span> — mandate didn't pull them in
+            </div></div>
+            <div class="arw">↓ "…<b>but the data showed something better —</b>"</div>
+
+            <div class="link"><div class="n">2</div><div class="lt">
+              <span class="big">RETENTION</span> strong · compliant + getting paid = <b>they don't leave</b><br>
+              <span style="color:#14532d;">LANDING → <b>"solve the thing they actually lose sleep over — getting paid — and the stickiness takes care of itself."</b></span>
+            </div></div>
+            <div class="arw">↓ "<b>and that retention signal became…</b>"</div>
+
+            <div class="link"><div class="n">3</div><div class="lt">
+              the <span class="big">BUSINESS CASE</span> — reframed acquisition → <b>retention</b>
+            </div></div>
+            <div class="arw">↓ "<b>which is what let me fund…</b>"</div>
+
+            <div class="link"><div class="n">4</div><div class="lt">
+              <span class="big">FUNDED</span> the <b>composable compliance platform</b> · headcount + all · <b>SG launching this month</b><br>
+              <span style="color:#333;">what it is: handles the <b>whole</b> expansion, not just the invoice — <b>AI</b> drafts each country's config · <b>human review</b> surface checks it · <b>QBO rebuilt as one service</b> the configs drive</span>
+            </div></div>
+            <div class="arw">↓ "<b>and honestly, to be straight with you —</b>" <span style="color:#7a5c00;">(honest: 1 market ≠ needle · won't oversell)</span></div>
+
+            <div class="link"><div class="n">5</div><div class="lt">
+              close: <b>"Malaysia was the business case;</b> the platform is the <span class="big">ENGINE.</span><b>"</b> FY27 across markets <span class="stop">→ STOP</span>
+            </div></div>
           </div>
         </div></div>
       </div>
@@ -225,6 +254,15 @@
             <li>country = <b>config entry + thin adapter</b></li>
             <li><b>4-6 wks → 3-5 days</b> (eng's number)</li>
             <li><b>strategy mine · architecture eng's</b> (Ankit, Callum)</li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">What IS the composable platform?</div>
+          <ul class="tg">
+            <li><b>1. Specs</b> — AI agent workflow drafts a country's config</li>
+            <li><b>2. Expert Review</b> — human-in-the-loop UI to check/approve the AI config</li>
+            <li><b>3. Rebuilt service</b> — QBO components rebuilt into one service, <b>driven by the configs</b></li>
+            <li>= new market is <b>config, not code</b> (ties to config-over-code)</li>
           </ul>
         </div>
         <div class="probe">
