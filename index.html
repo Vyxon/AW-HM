@@ -15,8 +15,14 @@
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
 
-  /* ---------- 3-ZONE GRID ---------- */
-  .zones { display: grid; grid-template-columns: 21% 47% 32%; gap: 8px; }
+  /* ---------- LAYOUT: left rail (intro|spine, then questions) + right probe rail ---------- */
+  .zones { display: flex; gap: 8px; align-items: flex-start; }
+  .left-rail { flex: 0 0 67%; display: flex; flex-direction: column; gap: 8px; }
+  .left-top { display: flex; gap: 8px; align-items: flex-start; }
+  .left-top .z-intro { flex: 0 0 31%; }
+  .left-top .z-spine { flex: 1; }
+  .zones .z-probe { flex: 1; }
+  .zones .qfa { margin-top: 0; }
   .zone { border: 1px solid #d5d5d5; border-radius: 5px; overflow: hidden; }
   .zone-h {
     padding: 5px 9px; font-size: 10pt; font-weight: 700; letter-spacing: .08em;
@@ -95,6 +101,32 @@
   .rules span + span::before { content: "  ·  "; color: #999; }
   .rules b { color: #111; }
 
+  /* ---------- QUESTIONS FOR ANDREW ---------- */
+  .qfa { margin-top: 10px; border: 1px solid #d5d5d5; border-radius: 6px; overflow: hidden; }
+  .qfa-h { padding: 6px 10px; font-size: 11pt; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: #fff; background: #6d3b9e; }
+  .qfa-body { padding: 8px 12px; column-count: 2; column-gap: 22px; }
+  .qfa-item { break-inside: avoid; margin-bottom: 9px; }
+  .qfa-item .ql { font-size: 8pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #6d3b9e; }
+  .qfa-item .qq { font-size: 10pt; color: #1a1a1a; }
+  .qfa-item .qf { font-size: 9pt; color: #555; padding-left: 12px; position: relative; }
+  .qfa-item .qf::before { content: "↳"; position: absolute; left: 0; color: #6d3b9e; }
+  .qfa-trap { background: #fdeaea; border-top: 1px solid #f0c4c4; padding: 5px 12px; font-size: 8.6pt; color: #7a1f1f; column-span: all; }
+
+  /* ---------- PROBLEM-SOLVING ---------- */
+  .ps { margin-top: 8px; border: 1px solid #d5d5d5; border-radius: 6px; overflow: hidden; }
+  .ps-h { padding: 6px 10px; font-size: 11pt; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: #fff; background: #b5651d; }
+  .ps-body { padding: 8px 12px; }
+  .ps-spine { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 7px; }
+  .ps-step { flex: 1 1 0; min-width: 90px; border-left: 3px solid #b5651d; background: #fbf1e8; border-radius: 0 4px 4px 0; padding: 4px 7px; }
+  .ps-step .n { font-size: 9.5pt; font-weight: 800; color: #8a4a12; }
+  .ps-step .d { font-size: 8.4pt; color: #333; }
+  .ps-tell { font-size: 9pt; color: #1a1a1a; padding: 2px 0 2px 12px; position: relative; }
+  .ps-tell::before { content: "▸"; position: absolute; left: 0; color: #b5651d; }
+  .ps-tell b { color: #111; }
+  .ps-trap { background: #fdeaea; border-top: 1px solid #f0c4c4; margin: 6px -12px -8px; padding: 5px 12px; font-size: 8.6pt; color: #7a1f1f; }
+
   @media print { body { zoom: 1 !important; } }
   @media screen { body { padding: 8px; } }
 </style>
@@ -103,9 +135,12 @@
 
   <div class="zones">
 
+   <div class="left-rail">
+    <div class="left-top">
+
     <!-- ZONE 1 : INTRO -->
     <div class="zone z-intro">
-      <div class="zone-h">Intro <small>~2 min → hand back</small></div>
+      <div class="zone-h">Intro</div>
       <div class="zone-body">
         <div class="hook"><div class="chip">1</div><div class="hk">
           <div class="w"><span class="bt blue">WHO</span>BUILDER</div>
@@ -156,7 +191,7 @@
 
     <!-- ZONE 2 : SPINE -->
     <div class="zone z-spine">
-      <div class="zone-h">eInvoicing Spine <small>~3-min version, then STOP · story ends at ⑤</small></div>
+      <div class="zone-h">eInvoicing Spine</div>
       <div class="zone-body">
         <div class="hook"><div class="chip">1</div><div class="hk">
           <div class="w"><span class="bt">OPENER</span>PDF → NETWORK</div>
@@ -197,7 +232,6 @@
         <div class="hook"><div class="chip">5</div><div class="hk">
           <div class="w"><span class="bt">SURPRISE 2 → RESULT</span>THE TURN <span class="callback">⤴ callback to BET</span></div>
           <div class="turn">
-            <div class="turn-h">one motion — ride the arrows, don't stop till ⑤</div>
 
             <div class="link"><div class="n">1</div><div class="lt">
               acquisition bet was <span class="big">WRONG</span> — mandate didn't pull them in
@@ -231,15 +265,106 @@
       </div>
     </div>
 
+    </div><!-- /.left-top -->
+
+    <!-- QUESTIONS FOR ANDREW (fills whitespace under intro+spine) -->
+    <div class="qfa">
+      <div class="qfa-h">Questions for Andrew</div>
+      <div class="qfa-body">
+        <div class="qfa-item">
+          <div class="ql">Yield · scaling constraint</div>
+          <div class="qq">On the 1-to-10 for Yield, what's the constraint you're most focused on — distribution into the base, product depth for a narrower ICP, or monetization?</div>
+        </div>
+        <div class="qfa-item">
+          <div class="ql">Yield · monetization</div>
+          <div class="qq">How does Yield make money today — a cut of the return, a flat fee on balances, or more a balance-and-stickiness play that monetizes through the rest of the stack?</div>
+          <div class="qf">Bigger lever: driving adoption so more idle balances earn, or going deeper up-market into treasury?</div>
+        </div>
+        <div class="qfa-item">
+          <div class="ql">Yield · markets + expansion</div>
+          <div class="qq">Where's Yield live today, and where's the frontier you're pushing into? Is the binding constraint on expansion regulatory — approval to offer yield products market by market — or product/operational?</div>
+        </div>
+        <div class="qfa-item">
+          <div class="ql">Culture · fireside callback (Shannon)</div>
+          <div class="qq">Shannon's root-of-the-regulation point stuck with me — on Yield, how much of your roadmap ends up led by that regulatory reality versus customer pull?</div>
+        </div>
+        <div class="qfa-item">
+          <div class="ql">Role · succession + 6 months</div>
+          <div class="qq">I understand this seat picks up Yield as you move on — Staff with a path to grow into lead, which is a big part of the appeal. What does "great" look like in the first six months: hold the surface you've built, or own a specific bet early?</div>
+        </div>
+      </div>
+      <div class="qfa-trap"><b>TRAPS:</b> no comp · no level · no promotion timeline — all reads as downlevel anxiety. Growth = "earn the fuller scope by delivering," never a timeline ask.</div>
+    </div>
+
+    <!-- PROBLEM-SOLVING (verbal, ambiguous Q) -->
+    <div class="ps">
+      <div class="ps-h">Problem-Solving · the spine</div>
+      <div class="ps-body">
+        <div class="ps-spine">
+          <div class="ps-step"><div class="n">1 CLARIFY</div><div class="d">restate goal · 2-3 scoping Qs · state assumptions</div></div>
+          <div class="ps-step"><div class="n">2 STRUCTURE</div><div class="d">"I'll look at A,B,C" — MECE, before diving in</div></div>
+          <div class="ps-step"><div class="n">3 ANALYZE</div><div class="d">deep on the crux · one-line the rest</div></div>
+          <div class="ps-step"><div class="n">4 RECOMMEND</div><div class="d">commit to ONE + the tradeoff you accept</div></div>
+          <div class="ps-step"><div class="n">5 RISKS</div><div class="d">what breaks it · the one thing you'd validate</div></div>
+        </div>
+        <div class="ps-tell"><b>NARROW TWICE:</b> name the crux bucket in STRUCTURE ("where this gets decided is X&amp;Y") → then spend time unevenly in ANALYZE. Don't boil the ocean.</div>
+        <div class="ps-tell"><b>COMMIT then caveat.</b> Waffling = the fail. "I don't know — here's how I'd find out" is aligned, not weak.</div>
+        <div class="ps-tell"><b>Fintech layer:</b> anchor in <b>bps take-rate / unit economics</b> + <b>per-market regulatory constraint</b>. Offense vs defense. Config not rebuild.</div>
+      </div>
+    </div>
+
+   </div><!-- /.left-rail -->
+
     <!-- ZONE 3 : PROBES -->
     <div class="zone z-probe">
-      <div class="zone-h">If he probes <small>answer-first, then reasoning</small></div>
+      <div class="zone-h">If he probes</div>
       <div class="zone-body">
+        <div class="probe">
+          <div class="q">How do you know retention is real? (4-part move, lean in)</div>
+          <ul class="tg">
+            <li><b>1. Headline + caveat:</b> 97.9% vs 75.1% — <b>flag selection bias first</b> (adopters already more engaged)</li>
+            <li><b>2. Bridge:</b> "signal's real &amp; strong — but that's <b>correlation</b>. Won't call it causal."</li>
+            <li><b>3. Trust this:</b> <b>~70% better net-attrition</b>, &gt;$250K MY cohort vs peer ROA mkts, post-rollout · directional</li>
+            <li><b>4. Own failure:</b> trials <b>-34%</b> (peers -26% → we did WORSE) · acquisition bet wrong</li>
+            <li>close: "<b>strong enough to fund the platform, honest enough not to call causal</b>"</li>
+            <li>denoms: <b>783/800 vs 5,500/7,323</b></li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">$ value of the pilot? (offense + defense)</div>
+          <ul class="tg">
+            <li><b>OFFENSE (incremental):</b> ~180 retained × $120 ARPC ≈ <b>~$20K/yr</b> · own it, it's small &amp; not causal</li>
+            <li><b>DEFENSE (the real value):</b> no compliance = <b>forced market exit</b> → lose the base, not the delta</li>
+            <li>MY: <b>~$360K</b> (3K impacted) → ~$960K full 8K base · SG: <b>~$5.5M</b> (22K custs)</li>
+            <li><b>ORG SCALE (cite the doc):</b> FY27 strategy names <b>131K QBO custs</b> needing e-invoicing to comply · intl base = <b>$832M / 2M custs</b></li>
+            <li>nuance: base is being <b>rightsized (-5.4%)</b> → compliance protects the <b>high-value base they choose to keep</b></li>
+            <li>punchline: "<b>small uplift, large downside protection — that's the business case</b>"</li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Couldn't you prove causation? (4 methods)</div>
+          <ul class="tg">
+            <li><b>AB test</b> — gold standard, but vol too low (GNS ~400/mo) → underpowered</li>
+            <li><b>geo-holdout</b> — MY vs a peer market w/o e-invoicing · control failed <b>parallel-trends</b> (peers weren't tracking MY pre-launch)</li>
+            <li><b>pre-post</b> — same custs before/after · <b>no counterfactual</b>, can't isolate feature from everything else</li>
+            <li><b>synthetic control</b> — best option, but <b>opt-in bias + low/unbalanced vol</b></li>
+            <li>→ rejected all 4 · <b>pivoted to usage metrics, honest we couldn't measure ROI causally</b></li>
+            <li>meta: low-vol, single-market, self-selected pilot <b>structurally can't</b> prove causal retention — refusing to fake it = the move</li>
+          </ul>
+        </div>
         <div class="probe learn">
           <div class="q">"What would you do differently?" (LEARN)</div>
           <ul class="tg">
             <li><b>regulator earlier</b> — that one's on me</li>
             <li>partner (right then) → now <b>build ourselves + headless</b></li>
+          </ul>
+        </div>
+        <div class="probe">
+          <div class="q">Your contribution vs the team?</div>
+          <ul class="tg">
+            <li><b>strategy + investment</b> (to SVP GM)</li>
+            <li><b>gov accreditation</b> (IMDA) · + design</li>
+            <li><b>architecture = engineering</b>, credit them</li>
           </ul>
         </div>
         <div class="probe">
@@ -268,23 +393,6 @@
           </ul>
         </div>
         <div class="probe">
-          <div class="q">How do you know retention is real? (lean in)</div>
-          <ul class="tg">
-            <li><b>98% vs 75%</b> — but flag it: <b>selection bias</b></li>
-            <li>trust: <b>~70% better net-attrition</b> vs peers</li>
-            <li><b>4 methodologies rejected</b> → pivoted to usage</li>
-            <li>denominators <b>783/800 vs 5,500/7,323</b></li>
-          </ul>
-        </div>
-        <div class="probe">
-          <div class="q">Your contribution vs the team?</div>
-          <ul class="tg">
-            <li><b>strategy + investment</b> (to SVP GM)</li>
-            <li><b>gov accreditation</b> (IMDA) · + design</li>
-            <li><b>architecture = engineering</b>, credit them</li>
-          </ul>
-        </div>
-        <div class="probe">
           <div class="q">Why partner, not build?</div>
           <ul class="tg">
             <li>right call <b>then</b>: risk, liability, speed</li>
@@ -306,7 +414,6 @@
             <li>SG customer said this <b>(paraphrase, flag it)</b></li>
           </ul>
         </div>
-        <div class="rules"><span class="rh">Rules:</span><span><b>spine then STOP</b></span><span><b>answer-first</b></span><span><b>I</b> = strategy/gov, <b>we</b> = build</span><span>numbers: <b>"let me get this right"</b> + glance</span><span>blank: <b>"take a second"</b></span><span>bench topic → <b>bridge back</b></span></div>
       </div>
     </div>
 
